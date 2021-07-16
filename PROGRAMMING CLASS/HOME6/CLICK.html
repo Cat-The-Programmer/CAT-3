@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            GOLDEN APPLE GAME
+        </title>
+
+        <style>
+            body{text-align: center;}
+            img{
+                width: 30%;
+                animation-name: fadeIn;
+                animation-delay: 10ms;
+                animation-iteration-count: 10;
+                animation-duration: 1000ms;
+                animation-direction: reverse;
+                animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            div{
+                font-size: 40px;
+            }
+            button{
+                font-size: 30px;
+            }
+            h3{
+                font-size: 40px;
+            }
+
+            h1{
+                font-size: 60px;
+            }
+
+            img:hover{
+                transform: scale(1.1);
+            }
+            @keyframes fadeIn{
+                0% {
+                    opacity:0; 
+                    transform: scale(1);}
+        }
+
+        </style>
+    </head>
+    <body>
+        <h1>SELL GOLDEN APPLES TO EARN CASH</h1>
+        <br/>
+        <br/>
+        <br/>
+        <img src="GOLDEN_APPLE.jpg" onclick="addMoney(amountPerClick)">
+        <h3>Current Cash: $<span id="money">0</span></h3>
+        <div class="upgradeArea">
+            <div class="priceOfGoldenApple">
+                <p>
+                    Your Golden Apple Sells For $<span id="currentApplePrice">10</span>
+                </p>
+                <button onclick="increasingSellingPrice();">
+                    Click to make your apples to worth more! <span id="priceSpan">($0)</span>
+                </button>
+                <br/>
+                <button onclick="resetGame();">
+                    Reset Game
+                </button>
+                <br/>
+                <button onclick="saveGame();">
+                    Save Game
+                </button>
+                <br/>
+                <button onclick="loadGame();">
+                    Load Game
+                </button>
+            </div>
+        </div>
+    </body>
+    <script>
+        const currentMoney=document.getElementById('money');
+        const currentApplePrice=document.getElementById('currentApplePrice');
+        const priceSpan=document.getElementById('priceSpan');
+        var money=0;
+        var amountPerClick=10;
+        var costToUpgrade=0;
+        
+        function addMoney(amount){
+            money+=amount;
+            currentMoney.innerHTML=money;       
+        }
+
+        function killMoney(killMoneyAmount){
+            money-=killMoneyAmount;
+            currentMoney.innerHTML=money;
+        }
+        
+        function increasingSellingPrice(upgrade){
+            costToUpgrade=10*parseInt(currentApplePrice.innerHTML);
+            if(money>=costToUpgrade){
+                killMoney(costToUpgrade);
+                amountPerClick+=4;
+                currentApplePrice.innerHTML=amountPerClick;
+            }
+            costToUpgrade=10*parseInt(currentApplePrice.innerHTML);
+            priceSpan.innerHTML="($"+costToUpgrade+")";
+        }
+
+        function resetGame(){
+            money=0;
+            currentMoney.innerHTML=money;
+            amountPerClick=10;
+            currentApplePrice.innerHTML=amountPerClick;
+            costToUpgrade=0;
+            priceSpan.innerHTML="($"+costToUpgrade+")";
+        }
+
+        function saveGame(){
+            localStorage.setItem('money',money);
+            localStorage.setItem('applePrice',amountPerClick);
+            localStorage.setItem('costToUpgrade',costToUpgrade);
+        }
+
+        function loadGame(){
+            money=parseInt(localStorage.getItem('money'));
+            currentMoney.innerHTML=money;
+            amountPerClick=parseInt(localStorage.getItem('applePrice'));
+            currentApplePrice.innerHTML=amountPerClick;
+            costToUpgrade=parseInt(localStorage.getItem('costToUpgrade'));
+            priceSpan.innerHTML="($"+costToUpgrade+")";
+
+        }
+        
+        </script>
+</html>

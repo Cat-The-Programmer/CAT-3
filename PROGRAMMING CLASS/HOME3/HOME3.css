@@ -1,0 +1,36 @@
+.gallery
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center
+}
+img{
+    width: 400px;
+    height: 400px;
+    box-shadow:rgb(109, 0, 0) 10px 10px 5px 10px;
+    border-radius: 20px;
+    transition: transform .5s;
+}
+img:hover
+{
+    transform: scale(1.4);
+}
+body{
+    text-align: center;
+    font-family: 'Encode Sans SC', sans-serif;
+}
+
+h3{
+    color: cadetblue;
+    position: relative;
+    left:10px;
+    transition: .2s;
+    z-index: -1;
+    text-align: center;
+    font-family: 'Encode Sans SC', sans-serif;
+}
+h3:hover{
+    opacity: 0.31;
+}

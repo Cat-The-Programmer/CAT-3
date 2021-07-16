@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            TO DO LIST
+        </title>
+    </head>
+    
+    <style>
+
+    </style>
+    <body>
+        <h1>
+            TO DO LIST
+        </h1>
+        <input type="text" id="box" placeholder="Insert to-do list">
+        <input type="button" value="Insert" onclick="Clicked();"> <br/>
+        <div id="list"></div>
+        <script>
+            if(localStorage.storedList)
+            {
+                loadList();
+            }
+            function Clicked(){
+                var newItem=document.createElement("div");
+                var taskToAdd=document.getElementById("box").value;
+                newItem.innerHTML=taskToAdd;
+                document.getElementById("list").appendChild(newItem);
+                newItem.onclick=removeItem;
+                saveList();
+            }
+            function removeItem(){
+                document.getElementById("list").removeChild(this);
+                saveList();
+            }
+            function saveList(){
+                localStorage.storedList=document.getElementById("list").innerHTML;
+            }
+            function loadList (){
+                document.getElementById("list").innerHTML=localStorage.storedList;
+                for(
+                    var i=0;
+                    i<list.children.length;
+                    i++
+                )
+                    {
+                        list.children[i].onclick=removeItem;
+                }
+            }
+
+        </script>
+    </body>
+</html>

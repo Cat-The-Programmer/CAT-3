@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="paperjs-v0.12.15/dist/paper-full.min.js"></script>
+<title>
+    MineCraft Soundboard
+</title>
+<script type="text/paperscript" canvas="myCanvas">
+    circles=[];
+
+    function CreateCircle(){
+        var maxPoint=new Point(view.size.width,view.size.height);
+        var randomPoint=Point.random();
+        var point=maxPoint * randomPoint;
+        var circle=new Path.Circle(point,700);
+        circle.fillColor=new Color(Math.random(),Math.random(),Math.random());
+        circles.push(circle);
+    }
+  window.CreateCircle=CreateCircle;
+
+    function onFrame(myEvent){
+        for(
+            var i=0;
+            i<circles.length;
+            i++)
+            {
+            circles[i].fillColor.hue+=1;
+            circles[i].scale(.9);
+        }   
+    }
+</script>
+
+<style>
+    h1 {text-align: center;}
+</style>
+    </head>
+    <body>
+        <h1>
+            MINECRAFT MUSIC
+        </h1>
+        <audio id="GHAST"><source src="../MOB SOUNDS/GHAST.wav"></audio>
+        <audio id="CREEPER"><source src="../MOB SOUNDS/CREEPER.wav"></audio>
+        <audio id="WITHER"><source src="../MOB SOUNDS/WITHER.wav"></audio>
+        <audio id="ElderGuardian"><source src="../MOB SOUNDS/ElderGuardian.wav"></audio>
+        <audio id="LLAMA"><source src="../MOB SOUNDS/LLAMA.wav"></audio>
+        <audio id="HORSE"><source src="../MOB SOUNDS/HORSE.wav"></audio>
+        <audio id="PIG"><source src="../MOB SOUNDS/PIG.wav"></audio>
+        <audio id="SHEEP"><source src="../MOB SOUNDS/SHEEP.wav"></audio>
+        <audio id="COW"><source src="../MOB SOUNDS/COW.wav"></audio>
+        <audio id="VILLAGER"><source src="../MOB SOUNDS/VILLAGER.wav"></audio>
+        <canvas id="myCanvas" resize>
+
+        </canvas>
+    <script>
+        const GHAST=document.getElementById('GHAST')
+        const CREEPER=document.getElementById('CREEPER')
+        const WITHER=document.getElementById('WITHER')
+        const ElderGuardian=document.getElementById('ElderGuardian')
+        const LLAMA=document.getElementById('LLAMA')
+        const HORSE=document.getElementById('HORSE')
+        const PIG=document.getElementById('PIG')
+        const SHEEP=document.getElementById('SHEEP')
+        const COW=document.getElementById('COW')
+        const VILLAGER=document.getElementById('VILLAGER')
+        document.addEventListener('keypress',function(event){
+            const keyName=event.key;
+            switch(keyName){
+                case('a'):
+                GHAST.currentTime=0;
+                GHAST.play();
+                CreateCircle();
+                break;
+
+                case('s'):
+                CREEPER.currentTime=0;
+                CREEPER.play();
+                CreateCircle();
+                break;
+
+                case('d'):
+                WITHER.currentTime=0;
+                WITHER.play();
+                CreateCircle();
+                break;
+
+                case('f'):
+                ElderGuardian.currentTime=0;
+                ElderGuardian.play();
+                CreateCircle();
+                break;
+
+                case('g'):
+                LLAMA.currentTime=0;
+                LLAMA.play();
+                CreateCircle();
+                break;
+
+                case('h'):
+                HORSE.currentTime=0;
+                HORSE.play();
+                CreateCircle();
+                break;
+        
+                case('j'):
+                PIG.currentTime=0;
+                PIG.play();
+                CreateCircle();
+                break;
+
+                case('k'):
+                SHEEP.currentTime=0;
+                SHEEP.play();
+                CreateCircle();
+                break;
+
+                case('l'):
+                COW.currentTime=0;
+                COW.play();
+                CreateCircle();
+                break;
+
+                case(';'):
+                VILLAGER.currentTime=0;
+                VILLAGER.play();
+                CreateCircle();
+                break;
+            }
+        });
+    </script>
+    </body>
+</html>

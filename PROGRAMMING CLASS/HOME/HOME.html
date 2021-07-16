@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap" rel="stylesheet">
+        <script>
+                function Click() {
+                    alert("You have resetted the information you entered");
+                }
+                function start() {
+                    var divisions = document.getElementsByTagName ('div');
+                    for (var i=0;
+                    i<divisions.length; i++){
+                        divisions[i].addEventListener('click', function(event) {this.classList.toggle('show-description');
+                                }
+                            )
+                        ;
+                    }
+                }
+
+        </script>
+        <title>
+            Web Page
+        </title>
+        <meta name="viewport" content="width=device-width"/> <!--Letting code to sense the device display size-->
+        <style>
+            body { background: rgb(0, 0, 0);
+            text-align: center;
+            color: rgb(255, 255, 255);
+            }
+            h1{text-align: center;
+            font-size: 80px;
+            text-decoration: underline;
+            font-family: 'Times New Roman';}
+           main{
+               display:block;
+               text-align: center;
+           }
+            ul{
+            list-style: none;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+            }
+
+            a:hover{color: cadetblue;}
+            a:active{color: darkcyan;}
+
+            h2{text-align: center;
+            font-size: 40px;
+            padding: 0px;
+            font-family: 'Encode Sans SC', sans-serif;
+            text-decoration: underline;
+            text-shadow:tomato}
+            
+            img {border-style: solid;
+            border-color: white;
+            border-width: thick;}
+            
+            a {color:white;
+            }
+            li{background: rgb(0 109 169);}
+            img{width: 500px;
+            height: 500px;}
+            input{width:400px;
+            height:50px;
+            font-size: 30px;
+            vertical-align: center; 
+            border: blue;}
+            button{width:300px;
+            height:50px;
+            font-size:30px}
+            ul {display:block}
+           
+           h2 .c{
+               justify-content: center;
+               }
+
+            .c {border-style: solid;
+               border-color: white;
+               border-width: 20px;
+               width: 900px;
+               position:relative;
+               left: 27%;}
+            
+            .showdescription p {height: auto;}
+               
+            label {
+                font-size: 50px;
+            }
+            
+            small {
+                font-size: 13px;
+                opacity: 0;
+            }
+
+
+            @media (max-width:500px){
+                body {background: black;
+               text-align: center;}
+                h1 {font-size: 50px;}
+                ul {width: 450px;
+                font-size: 25px;
+                text-align: center;}
+                h2 {font-size: 30px;}
+                button {font-size: 30px;}
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <script>
+            onload="start()"
+        </script>
+        <h1>
+           COVID-19
+        </h1>
+        <ul>
+            <div>
+            <li><a href="INTRO.html">INTRODUCTION</a></li>
+            <li><a href="ORIGIN.html">ORIGIN</a></li>
+            <li><a href="HOAX.html"> MYTHS & HOAXES</a></li>
+            <li><a href="RESPONSES.html"> EXAMPLE OF RESPONSES</a></li>
+            <li><a href="SYMPTOMS.html"> SYMPTOMS</a></li>
+            <li><a href="IMPACTS.html"> IMPACTS</a></li>
+            <li><a href="PREVENTION.html"> PREVENTION</a></li>
+            <li><a href="CONCLUSION.html">CONCLUSION</a></li>
+        </div>
+    
+    <div class="show-description">
+        <small>HI</small>
+    </div>
+    
+    </ul>
+    <main>
+        <div class="show-description">
+            <small>
+                get trolled lol
+            </small>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/SARS-CoV-2_without_background.png">
+        </div>  
+        
+        <div>
+            <h1> 
+
+            </h1>
+        </div>
+    
+        <h2 class="c">
+        
+            <a href="https://covid19.who.int/">
+            CURRENT MAP OF CONFIRMED CASES AROUND THE WORLD </a>
+        </h2>
+    </main>
+
+       <div>
+        <form action="mailto:someone@example.com" method="POST" enctype="text/plain">
+            <label>
+                ENTER EMAIL/PHONE TO RECEIVE FUTURE NOTIFICATIONS
+            </label>
+            <h1> </h1>
+            <input type="email" name="mail" required placeholder="ENTER EMAIL">
+            </input>
+                <br/>
+                <br/>
+                <br/>
+            <input type="phone" name="phone" placeholder="ENTER PHONE" required minlength="8" maxlength="11">
+            </input>
+            <br/>
+            <br/>
+            <br/>
+            <input type="text" name="comments" placeholder="ENTER YOUR COMMENTS">
+            <br/>
+            <br/>
+            <br/>
+            <button type="submit" value="Send">SUBMIT</button>
+            <br/>
+            <br/>
+            <br/>
+            <button onclick="Click()" type="reset" value="Reset"> RESET </button>
+        </form>
+       </div>     
+    </body>
+</html>
